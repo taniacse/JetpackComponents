@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 class SimpleViewModel : ViewModel() {
 
 
-    val firstName ="Nadia"
-    val lastName  ="Ferdous"
+    val firstName ="Suriya"
+    val lastName  ="Sultana"
     var likes = 0
             private set
 
