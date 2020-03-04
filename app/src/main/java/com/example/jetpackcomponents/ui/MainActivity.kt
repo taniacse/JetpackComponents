@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.jetpackcomponents.R
 import com.example.jetpackcomponents.data.Popularity
 import com.example.jetpackcomponents.data.SimpleViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
        /* updateName()*/
     }
 
-    fun onLike(view :View){
+   /* fun onLike(view :View){
         viewModel.onLike()
         updateLikes()
 
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateName(){
 
-        findViewById<TextView>(R.id.plain_name).text = viewModel.firstName
+        plain_name.text = viewModel.firstName
         findViewById<TextView>(R.id.plain_lastname).text = viewModel.lastName
     }
 
@@ -86,5 +87,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-
+*/
 }

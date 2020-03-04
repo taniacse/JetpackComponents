@@ -22,12 +22,10 @@
     <data>
 
         <variable
-            name="name"
-            type="String"/>
+            name="viewmodel"
+            type="com.example.jetpackcomponents.data.SimpleViewModel"/>
 
-        <variable
-            name="lastName"
-            type="String"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,7 +39,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="128dp"
-            android:text="@{name}"
+            android:text="@{viewmodel.firstName}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +52,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="128dp"
-            android:text="@{lastName}"
+            android:text="@{viewmodel.lastName}"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +75,7 @@
 
         <TextView
             android:id="@+id/likes"
+            android:text="@{Integer.toString(viewmodel.likes)}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
@@ -93,7 +92,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
-            android:onClick="onLike"
+            android:onClick="@{() -> viewmodel.onLike()}"
             android:text="@string/like"
             app:layout_constraintBottom_toTopOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="@+id/imageView"

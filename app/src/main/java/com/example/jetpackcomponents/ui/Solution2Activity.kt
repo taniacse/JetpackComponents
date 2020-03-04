@@ -31,17 +31,18 @@ class Solution2Activity : AppCompatActivity() {
 
 
         val binding:ActivitySolution2Binding = DataBindingUtil.setContentView(this,R.layout.activity_solution_2)
-
-        binding.name = "slajkfnsda"
-        binding.lastName = "ttttttttttt"
-        updateLikes()
+        binding.viewmodel = viewModel
+        binding.lifecycleOwner = this
+       /* binding.name = "slajkfnsda"
+        binding.lastName = "ttttttttttt"*/
+       /* updateLikes()*/
 
     }
 
-    fun onLike(view: View) {
+    /*fun onLike(view: View) {
         viewModel.onLike()
-        updateLikes()
-    }
+       *//* updateLikes()*//*
+    }*/
 
     /**
      * This method has many problems:
@@ -49,7 +50,7 @@ class Solution2Activity : AppCompatActivity() {
      * - It has untestable logic
      * - It's updating two views when called even if they're not changing
      */
-    private fun updateLikes() {
+    /*private fun updateLikes() {
         findViewById<TextView>(R.id.likes).text = viewModel.likes.toString()
         findViewById<ProgressBar>(R.id.progressBar).progress =
             (viewModel.likes * 100 / 5).coerceAtMost(100)
@@ -60,7 +61,7 @@ class Solution2Activity : AppCompatActivity() {
         ImageViewCompat.setImageTintList(image, ColorStateList.valueOf(color))
 
         image.setImageDrawable(getDrawablePopularity(viewModel.popularity, this))
-    }
+    }*/
 
     private fun getAssociatedColor(popularity: Popularity, context: Context): Int {
         return when (popularity) {
